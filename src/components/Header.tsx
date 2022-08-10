@@ -38,23 +38,25 @@ const MyHeader = () => {
 	return (
 		<Header height={80} className={classes.header}>
 			<div className={classes.flex}>
-				<IconLogo />
+				<IconLogo data-testid="logo" />
 				<MediaQuery smallerThan="md" styles={{ display: 'none' }}>
-					<div className={classes.links}>
-						<Group align="center" className={classes.mainLinks}>
-							<NavLink>Features</NavLink>
-							<NavLink>Company</NavLink>
-							<NavLink>Careers</NavLink>
-							<NavLink>About</NavLink>
+					<div className={classes.links} data-testid="links">
+						<Group align="center" className={classes.mainLinks} data-testid="main-links">
+							<NavLink component="a">Features</NavLink>
+							<NavLink component="a">Company</NavLink>
+							<NavLink component="a">Careers</NavLink>
+							<NavLink component="a">About</NavLink>
 						</Group>
-						<Group align="center" className={classes.mainLinks}>
-							<NavLink>Login</NavLink>
-							<NavLink variant="outline">Register</NavLink>
+						<Group align="center" className={classes.mainLinks} data-testid="auth-links">
+							<NavLink component="a">Login</NavLink>
+							<NavLink component="a" variant="outline">
+								Register
+							</NavLink>
 						</Group>
 					</div>
 				</MediaQuery>
 				<MediaQuery largerThan="md" styles={{ display: 'none' }}>
-					<Burger opened={false} />
+					<Burger data-testid="burger" opened={false} />
 				</MediaQuery>
 			</div>
 		</Header>
